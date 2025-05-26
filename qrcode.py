@@ -3,7 +3,9 @@ import qrcode
 from io import BytesIO
 from PIL import Image
 
+# Diese Zeile muss direkt nach den Imports stehen!
 st.set_page_config(page_title="QR-Code Generator", page_icon="🔳")
+
 st.title("🔳 QR-Code Generator für Webseiten")
 
 # Texteingabe vom Nutzer
