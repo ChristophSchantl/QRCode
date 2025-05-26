@@ -1,7 +1,9 @@
 
-
+import streamlit as st
 import os
 import qrcode
+
+st.title("QR-Code Generator")
 
 webpage = input("webpage: ")
 
