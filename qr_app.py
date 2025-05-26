@@ -22,7 +22,7 @@ if st.button("QR-Code erstellen") and webpage:
     img = Image.open(buffer)
 
     # Bild anzeigen
-    st.image(img, caption="Dein QR-Code", use_column_width=False)
+    st.image(img, caption="Dein QR-Code", use_container_width=False)
 
     # Download-Link
     st.download_button(
