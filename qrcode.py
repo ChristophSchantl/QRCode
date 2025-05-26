@@ -1,12 +1,16 @@
-
 import streamlit as st
-import os
 import qrcode
+from io import BytesIO
+from PIL import Image
 
 st.title("QR-Code Generator")
 
-webpage = input("webpage: ")
+text = st.text_input("Text oder URL eingeben")
 
-img = qrcode.make(f" Webpage: {webpage}")
-img.save("qr.png", "PNG")
-
+if st.button("QR-Code erstellen") and text:
+    qr = qrcode.make(text)
+    buf = BytesIO()
+    qr.save(buf)
+    buf.seek(0)
+    img = Image.open(buf)
+    st.image(img, caption="Dein QR-Code", use_column_width=True)
